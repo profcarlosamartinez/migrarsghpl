@@ -24,3 +24,10 @@ func conectarBd() (db *sql.DB) {
 	log.Println("Conexión Exitosa con la BD")
 	return db
 }
+func ChequeoConnection() int {
+	err := MysqlConex.Ping()
+	if err != nil {
+		return 0
+	}
+	return 1
+}

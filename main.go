@@ -4,6 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 
+	"github.com/profcarlosamartinez/migrarsghpl/bd"
+
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -13,6 +15,14 @@ type Persona struct {
 }
 
 func main() {
+
+	err := bd.MysqlConex.Ping()
+
+	bd.ChequeoConnection()
+
+	if err != nil {
+		fmt.Println("Conexión exitosa")
+	}
 
 	fmt.Println("Migrar en Go con MySQL")
 
