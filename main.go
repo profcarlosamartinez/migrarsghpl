@@ -15,6 +15,7 @@ type Persona struct {
 func main() {
 
 	fmt.Println("Migrar en Go con MySQL")
+	fmt.Println("prueba")
 
 	db, err := sql.Open("mysql", "root:ste24598ab@tcp(192.168.1.4:3306)/guardia")
 
